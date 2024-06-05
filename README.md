@@ -24,47 +24,47 @@ An overview of a biometric attendance system report typically provides a high-le
 A database schema for a biometric attendance system typically includes tables to store information related to User, attendance records, department, devices, and other relevant data. Here's a simplified example of a database schema:
 
 # 1.Users Table:
-i. user_id (Primary Key)
-ii.first_name
-iii.last_name
-iv.email (Unique)
-v.phone_number
-vi.department (Foreign Key referencing Departments table)
-vii.role (Foreign Key referencing Roles table)
-viii.biometric_data
-ix.created_at
-x.updated_at
+user_id (Primary Key),
+first_name,
+last_name,
+email (Unique),
+phone_number,
+department (Foreign Key referencing Departments table),
+role (Foreign Key referencing Roles table),
+biometric_data,
+created_at,
+updated_at,
 
 # 2.AttendanceRecords Table:
-attendance_id (Primary Key)
-user_id (Foreign Key referencing Users table)
-timestamp
-status
-device_id (Foreign Key referencing Devices table)
-created_at
-updated_at
+attendance_id (Primary Key),
+user_id (Foreign Key referencing Users table),
+timestamp,
+status,
+device_id (Foreign Key referencing Devices table),
+created_at,
+updated_at,
 
 # 3.Devices Table:
-device_id (Primary Key)
-device_name
-location
-ip_address
-status
-last_maintenance_date
-created_at
-updated_at
+device_id (Primary Key),
+device_name,
+location,
+ip_address,
+status,
+last_maintenance_date,
+created_at,
+updated_at,
 
 # 4.Departments Table:
-department_id (Primary Key)
-department_name
-created_at
-updated_at
+department_id (Primary Key),
+department_name,
+created_at,
+updated_at,
 
 # 5.Roles Table:
-role_id (Primary Key)
-role_name
-created_at
-updated_at
+role_id (Primary Key),
+role_name,
+created_at,
+updated_at,
 
 This schema includes relationships between tables using foreign keys, ensuring data integrity. The Users table references the Departments table for department information and the Roles table for role information. The AttendanceRecords table references both the Users and Devices tables. Each table also includes fields for recording the creation and update timestamps.
 
